@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing Page ROI Calculator + Conversion Audit</title>
+  <meta name="description" content="Estimate how much revenue a better landing page could unlock, then get a practical conversion audit checklist." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a31;
+      --panel-2: #18223d;
+      --text: #f6f8ff;
+      --muted: #aab4d0;
+      --accent: #75f0c1;
+      --accent-2: #7aa7ff;
+      --warn: #ffd37a;
+      --bad: #ff8d8d;
+      --line: rgba(255,255,255,.12);
+      --shadow: 0 24px 70px rgba(0,0,0,.35);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top left, rgba(117,240,193,.18), transparent 32rem), radial-gradient(circle at 85% 15%, rgba(122,167,255,.18), transparent 28rem), var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: var(--accent); }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 56px 0 30px; }
+    .badge { display:inline-flex; gap:8px; align-items:center; padding:7px 12px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.06); color:var(--muted); font-size:14px; }
+    h1 { font-size: clamp(36px, 7vw, 72px); line-height: .96; letter-spacing: -0.06em; margin: 18px 0; max-width: 900px; }
+    .lede { font-size: clamp(18px, 2.4vw, 23px); color: var(--muted); max-width: 760px; margin: 0; }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items:start; padding: 24px 0 60px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.035)); border:1px solid var(--line); border-radius: 26px; box-shadow: var(--shadow); overflow: hidden; }
+    .card h2 { margin:0 0 8px; font-size: 24px; letter-spacing:-.02em; }
+    .card p { color: var(--muted); margin:0 0 18px; }
+    .inner { padding: 24px; }
+    label { display:block; font-weight: 650; margin: 16px 0 7px; }
+    .hint { color: var(--muted); font-size: 13px; margin-top: 4px; }
+    input, select { width: 100%; padding: 13px 14px; border-radius: 14px; border:1px solid var(--line); background: rgba(2,7,20,.7); color: var(--text); font-size:16px; outline: none; }
+    input:focus, select:focus { border-color: rgba(117,240,193,.8); box-shadow: 0 0 0 4px rgba(117,240,193,.12); }
+    .row { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .results { display:grid; gap: 12px; margin-top: 18px; }
+    .metric { padding: 16px; background: rgba(2,7,20,.48); border:1px solid var(--line); border-radius: 18px; }
+    .metric strong { display:block; font-size: clamp(25px, 4vw, 42px); line-height: 1.05; letter-spacing:-.04em; }
+    .metric span { color: var(--muted); font-size: 14px; }
+    .positive strong { color: var(--accent); }
+    .warn strong { color: var(--warn); }
+    .tabs { display:flex; gap: 8px; flex-wrap:wrap; padding: 0 24px 18px; border-bottom:1px solid var(--line); }
+    button { cursor:pointer; border:0; border-radius: 999px; padding: 11px 15px; background: var(--panel-2); color: var(--text); font-weight: 700; }
+    button.active { background: var(--accent); color: #07120e; }
+    .audit { padding: 6px 24px 24px; }
+    .check { display:grid; grid-template-columns: 28px 1fr; gap: 12px; padding: 14px 0; border-bottom:1px solid var(--line); }
+    .check:last-child { border-bottom: 0; }
+    .box { width: 22px; height: 22px; border-radius: 7px; border:1px solid rgba(255,255,255,.28); margin-top: 2px; }
+    .check h3 { margin:0 0 4px; font-size: 16px; }
+    .check p { margin:0; color: var(--muted); font-size: 14px; }
+    .cta { margin: 0 0 72px; padding: 28px; display:flex; gap:20px; justify-content:space-between; align-items:center; background: linear-gradient(135deg, rgba(117,240,193,.16), rgba(122,167,255,.16)); border:1px solid var(--line); border-radius: 28px; }
+    .cta h2 { margin:0 0 6px; }
+    .cta p { margin:0; color:var(--muted); }
+    .cta .button { display:inline-block; text-decoration:none; background:var(--accent); color:#07120e; padding:13px 18px; border-radius:999px; font-weight:800; white-space:nowrap; }
+    footer { color: var(--muted); font-size: 13px; padding: 0 0 44px; }
+    @media (max-width: 860px) { .grid, .row { grid-template-columns: 1fr; } .cta { display:block; } .cta .button { margin-top:18px; } }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="badge">⚡ Free calculator <span>•</span> landing page ROI + audit</div>
+    <h1>How much money is your landing page leaving on the table?</h1>
+    <p class="lede">Estimate the revenue impact of small conversion-rate improvements, then use the checklist to find practical fixes before you spend more on traffic.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="grid" aria-label="calculator and results">
+      <div class="card">
+        <div class="inner">
+          <h2>Your current numbers</h2>
+          <p>Use rough numbers. The goal is directionally useful math, not accounting-grade precision.</p>
+          <div class="row">
+            <div>
+              <label for="visitors">Monthly visitors</label>
+              <input id="visitors" inputmode="numeric" type="number" min="0" value="2500" />
+            </div>
+            <div>
+              <label for="conversion">Current conversion rate (%)</label>
+              <input id="conversion" inputmode="decimal" type="number" min="0" step="0.1" value="2.0" />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="value">Average lead / sale value ($)</label>
+              <input id="value" inputmode="decimal" type="number" min="0" step="1" value="150" />
+              <div class="hint">For leads, use your estimated value per qualified lead.</div>
+            </div>
+            <div>
+              <label for="target">Target conversion rate (%)</label>
+              <input id="target" inputmode="decimal" type="number" min="0" step="0.1" value="3.0" />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="fixCost">Estimated fix / rebuild cost ($)</label>
+              <input id="fixCost" inputmode="decimal" type="number" min="0" step="1" value="500" />
+            </div>
+            <div>
+              <label for="confidence">Confidence level</label>
+              <select id="confidence">
+                <option value="0.5">Conservative — 50%</option>
+                <option value="0.75" selected>Reasonable — 75%</option>
+                <option value="1">Optimistic — 100%</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="inner">
+          <h2>Estimated upside</h2>
+          <p>Based on the improvement from your current conversion rate to the target rate.</p>
+          <div class="results">
+            <div class="metric positive"><strong id="monthlyUpside">$1,875</strong><span>extra monthly revenue / lead value</span></div>
+            <div class="metric positive"><strong id="annualUpside">$22,500</strong><span>extra annual revenue / lead value</span></div>
+            <div class="metric warn"><strong id="payback">0.3 months</strong><span>estimated payback period</span></div>
+            <div class="metric"><strong id="extraConversions">25</strong><span>extra conversions per month</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" aria-label="conversion audit checklist">
+      <div class="inner">
+        <h2>Fast conversion audit checklist</h2>
+        <p>These are the fixes that usually matter before fancy redesign work.</p>
+      </div>
+      <div class="tabs">
+        <button class="active" data-tab="clarity">Clarity</button>
+        <button data-tab="trust">Trust</button>
+        <button data-tab="mobile">Mobile</button>
+        <button data-tab="speed">Speed</button>
+      </div>
+      <div class="audit" id="audit"></div>
+    </section>
+
+    <section class="cta">
+      <div>
+        <h2>Want a $99 landing page mini-audit?</h2>
+        <p>Send your page URL and I’ll review the biggest conversion leaks: clarity, CTA placement, mobile layout, trust signals, speed friction, and quick-win fixes.</p>
+      </div>
+      <a class="button" href="mailto:alexey.zadorozhny@proton.me?subject=Landing%20page%20mini-audit%20request&body=Hi%20Alexey%2C%0A%0AI%27d%20like%20a%20landing%20page%20mini-audit.%0A%0APage%20URL%3A%20%0ABusiness%20type%3A%20%0AMain%20goal%20%28leads%2C%20sales%2C%20bookings%2C%20etc.%29%3A%20%0ACurrent%20monthly%20traffic%20%28rough%20estimate%29%3A%20%0ACurrent%20conversion%20rate%20%28if%20known%29%3A%20%0AAnything%20specific%20you%20want%20checked%3A%20%0A%0AThanks!">Request a mini-audit</a>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>Note: This calculator is an estimate for planning. Actual results depend on traffic quality, offer strength, sales process, and measurement accuracy.</p>
+  </footer>
+
+  <script>
+    const $ = id => document.getElementById(id);
+    const money = n => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Number.isFinite(n) ? n : 0);
+    const num = n => new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 }).format(Number.isFinite(n) ? n : 0);
+
+    const auditItems = {
+      clarity: [
+        ['Can a stranger understand the offer in 5 seconds?', 'Headline should state who it helps, what outcome it creates, and why it matters.'],
+        ['Is there one primary CTA?', 'Avoid splitting attention with several equally prominent actions.'],
+        ['Does the page answer “why now?”', 'Urgency can be practical: limited slots, seasonal timing, pain cost, or missed opportunity.'],
+        ['Are sections arranged in decision order?', 'Problem → outcome → proof → process → offer → CTA usually beats random content blocks.']
+      ],
+      trust: [
+        ['Are proof points near the CTA?', 'Reviews, logos, before/after screenshots, guarantees, or concrete stats should support the action.'],
+        ['Is the offer specific enough?', 'Vague promises convert poorly. Specific deliverables and timelines lower perceived risk.'],
+        ['Does the page handle objections?', 'Address price, time, quality, guarantees, process, and what happens after contact.'],
+        ['Is the form asking only what it needs?', 'Every extra field can reduce completion rate, especially on mobile.']
+      ],
+      mobile: [
+        ['Is the first screen useful on a phone?', 'Users should see the core promise and CTA without hunting.'],
+        ['Are buttons thumb-friendly?', 'Use large tap targets and enough spacing between links/buttons.'],
+        ['Do sections avoid wall-of-text blocks?', 'Short paragraphs, bullets, and clear headings matter more on mobile.'],
+        ['Is sticky CTA worth testing?', 'For lead-gen pages, a simple sticky bottom CTA can improve mobile action rate.']
+      ],
+      speed: [
+        ['Does the page load fast on mobile data?', 'Compress images, remove unused scripts, and avoid heavy page builders where possible.'],
+        ['Are hero images optimized?', 'Large uncompressed hero images are one of the easiest wins.'],
+        ['Are third-party scripts controlled?', 'Chat widgets, trackers, and embeds can quietly slow pages down.'],
+        ['Is layout stable while loading?', 'Avoid elements jumping around; it hurts user trust and usability.']
+      ]
+    };
+
+    function calc() {
+      const visitors = +$('visitors').value || 0;
+      const current = (+$('conversion').value || 0) / 100;
+      const target = (+$('target').value || 0) / 100;
+      const value = +$('value').value || 0;
+      const fixCost = +$('fixCost').value || 0;
+      const confidence = +$('confidence').value || 0;
+      const extra = Math.max(0, visitors * (target - current));
+      const monthly = extra * value * confidence;
+      const annual = monthly * 12;
+      const payback = monthly > 0 ? fixCost / monthly : 0;
+      $('monthlyUpside').textContent = money(monthly);
+      $('annualUpside').textContent = money(annual);
+      $('payback').textContent = monthly > 0 ? `${num(payback)} months` : 'n/a';
+      $('extraConversions').textContent = num(extra * confidence);
+    }
+
+    function renderAudit(tab='clarity') {
+      $('audit').innerHTML = auditItems[tab].map(([h,p]) => `<div class="check"><div class="box"></div><div><h3>${h}</h3><p>${p}</p></div></div>`).join('');
+      document.querySelectorAll('.tabs button').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+    }
+
+    document.querySelectorAll('input, select').forEach(el => el.addEventListener('input', calc));
+    document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => renderAudit(b.dataset.tab)));
+    calc(); renderAudit();
+  </script>
+</body>
+</html>
