@@ -61,6 +61,7 @@
     a { color: var(--teal); }
     .wrap { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
     header.wrap { position: relative; min-height: 715px; padding: 24px 0 36px; display:grid; align-items:center; }
+    .checklist-header { display:block; padding-top:24px; }
     header.wrap::before {
       content:"";
       position:absolute;
@@ -98,6 +99,7 @@
       z-index:2;
     }
     .brand, .nav-brand { display:inline-flex; align-items:center; text-decoration:none; }
+    .checklist-header nav { position:relative; top:auto; left:auto; right:auto; margin-bottom:72px; }
     .logo-img { width:235px; max-width:min(54vw,260px); height:auto; display:block; }
     .navlinks, .nav-links { display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
     .navlinks a, .nav-links a, .button, .cta .button, .subcta .button.secondary {
@@ -249,6 +251,7 @@
     .disclosure strong { color:var(--navy) !important; }
     .checklist-header { min-height:560px !important; }
     .checklist-header .lede { max-width:760px; }
+    .checklist-header h1 { margin-top:18px; }
     @media (max-width:920px) {
       header.wrap { min-height:auto; padding-top:22px; display:block; }
       header.wrap::before { opacity:.28; width:520px; height:520px; right:-260px; top:80px; }
@@ -256,6 +259,7 @@
       .topnav, nav { position:relative; top:auto; left:auto; right:auto; display:block; margin-bottom:38px; }
       .navlinks, .nav-links { justify-content:flex-start; margin-top:16px; }
       .hero-grid, .grid, .row, .resource-grid, .offer-detail, .faq-grid, .content-grid { grid-template-columns:1fr; }
+      .checklist-header nav { display:block; margin-bottom:46px; }
       .hero-grid { padding-top:0; }
       .hero-card { margin-top:30px; transform:none; }
       .toolbox { position:static; }
