@@ -368,7 +368,11 @@
 <body>
   <header class="wrap checklist-header">
     <nav>
-      <a class="nav-brand" href="./" aria-label="Small Site Studio home"><img class="logo-img" src="assets/small-site-studio-logo.png" width="900" height="600" alt="Small Site Studio logo"></a>
+      <a class="nav-brand" href="./" aria-label="Small Site Studio home"><picture>
+          <source type="image/webp" srcset="assets/small-site-studio-logo-240.webp 240w, assets/small-site-studio-logo-420.webp 420w, assets/small-site-studio-logo-640.webp 640w, assets/small-site-studio-logo-900.webp 900w" sizes="(max-width: 720px) 210px, 235px">
+          <source type="image/png" srcset="assets/small-site-studio-logo-240.png 240w, assets/small-site-studio-logo-420.png 420w, assets/small-site-studio-logo-640.png 640w, assets/small-site-studio-logo-900.png 900w" sizes="(max-width: 720px) 210px, 235px">
+          <img class="logo-img" src="assets/small-site-studio-logo-420.png" width="900" height="600" alt="Small Site Studio logo" decoding="async">
+        </picture></a>
       <div class="nav-links">
         <a href="./#calculator">ROI calculator</a>
         <a class="button primary" href="./#calculator">Estimate your landing page upside</a>

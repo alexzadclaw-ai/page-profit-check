@@ -385,7 +385,11 @@
 <body>
   <header class="wrap">
     <nav class="topnav" aria-label="site navigation">
-      <a class="brand" href="./" aria-label="Small Site Studio home"><img class="logo-img" src="assets/small-site-studio-logo.png" width="900" height="600" alt="Small Site Studio logo"></a>
+      <a class="brand" href="./" aria-label="Small Site Studio home"><picture>
+          <source type="image/webp" srcset="assets/small-site-studio-logo-240.webp 240w, assets/small-site-studio-logo-420.webp 420w, assets/small-site-studio-logo-640.webp 640w, assets/small-site-studio-logo-900.webp 900w" sizes="(max-width: 720px) 210px, 235px">
+          <source type="image/png" srcset="assets/small-site-studio-logo-240.png 240w, assets/small-site-studio-logo-420.png 420w, assets/small-site-studio-logo-640.png 640w, assets/small-site-studio-logo-900.png 900w" sizes="(max-width: 720px) 210px, 235px">
+          <img class="logo-img" src="assets/small-site-studio-logo-420.png" width="900" height="600" alt="Small Site Studio logo" decoding="async">
+        </picture></a>
       <div class="navlinks">
         <a href="./#calculator">ROI calculator</a>
         <a href="./checklist.html">Launch checklist</a>
@@ -399,8 +403,9 @@
       </div>
       <aside class="hero-card" aria-label="Small Site Studio visual identity">
         <picture>
-          <source srcset="assets/small-site-studio-audit-graphic.webp" type="image/webp">
-          <img src="assets/small-site-studio-audit-graphic.png" width="1536" height="1024" alt="Illustrated Small Site Studio audit dashboard with checklist, analytics, and conversion icons">
+          <source type="image/webp" srcset="assets/small-site-studio-audit-graphic-640.webp 640w, assets/small-site-studio-audit-graphic-960.webp 960w, assets/small-site-studio-audit-graphic-1200.webp 1200w, assets/small-site-studio-audit-graphic-1536.webp 1536w" sizes="(max-width: 760px) calc(100vw - 66px), 585px">
+          <source type="image/png" srcset="assets/small-site-studio-audit-graphic-640.png 640w, assets/small-site-studio-audit-graphic-960.png 960w, assets/small-site-studio-audit-graphic-1200.png 1200w, assets/small-site-studio-audit-graphic-1536.png 1536w" sizes="(max-width: 760px) calc(100vw - 66px), 585px">
+          <img src="assets/small-site-studio-audit-graphic-960.png" width="1536" height="1024" alt="Illustrated Small Site Studio audit dashboard with checklist, analytics, and conversion icons" fetchpriority="high" decoding="async">
         </picture>
         <div class="mini-stat">
           <div><strong>5–10</strong><span>highest-impact fixes</span></div>
