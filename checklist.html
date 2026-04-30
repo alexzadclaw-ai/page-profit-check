@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Small Business Website Launch Checklist | Page Profit Check</title>
   <meta name="description" content="A practical website launch checklist for small businesses covering setup, SEO, analytics, legal basics, and post-launch follow-up." />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="canonical" href="https://page-profit-check.pages.dev/checklist.html" />
 
 
@@ -150,7 +151,7 @@
       box-shadow:0 40px 110px rgba(6,36,54,.35);
       transform:rotate(2deg);
     }
-    .hero-card img { width:100%; display:block; border-radius:0; background:transparent; box-shadow:none; }
+    .hero-card img { width:100%; height:auto; display:block; border-radius:0; background:transparent; box-shadow:none; }
     .hero-card .mini-stat { margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:20px; border-radius:28px; background:var(--navy); color:#fff; }
     .mini-stat div { padding:0; border:0; background:transparent; }
     .mini-stat strong { display:block; font-size:42px; line-height:1; letter-spacing:-.06em; color:#fff; }
@@ -194,8 +195,8 @@
     .positive strong { color:var(--teal); }
     .warn strong { color:#9a6a1e; }
     .tabs { display:flex; gap:8px; flex-wrap:wrap; padding:0 28px 20px; border-bottom:1px solid rgba(6,36,54,.10); }
-    button { cursor:pointer; border:2px solid rgba(6,36,54,.12); border-radius:999px; padding:11px 15px; background:#fff; color:var(--navy); font-weight:950; }
-    button.active { color:#fff; background:var(--navy); border-color:var(--navy); }
+    button { cursor:pointer; border:2px solid rgba(6,36,54,.12); border-radius:999px; padding:11px 15px; background:#fff; color:#062436; font-weight:950; }
+    button.active { color:#fff; background:#062436; border-color:#062436; }
     .audit { padding:8px 28px 28px; }
     .check { display:grid; grid-template-columns:32px 1fr; gap:12px; padding:16px 0; border-bottom:1px solid rgba(6,36,54,.10); }
     .check:last-child { border-bottom:0; }
@@ -275,7 +276,7 @@
     @media (max-width:760px) {
       .wrap { width:min(100% - 28px, 1180px); }
       .navlinks a, .nav-links a, .button { width:100%; }
-      .logo-img { width:210px; }
+      .logo-img { width:210px; height:auto; }
       .hero-card { border-radius:30px; padding:18px; }
       .hero-card .mini-stat { grid-template-columns:1fr; }
       .main-stripe { margin-top:34px; }
@@ -348,6 +349,9 @@
     .theme-toggle .knob { width:22px; height:22px; border-radius:50%; background:var(--sky); box-shadow:inset 0 0 0 5px rgba(255,255,255,.35); }
     [data-theme="dark"] .theme-switcher { background:rgba(12,31,43,.88); border-color:rgba(157,219,231,.16); }
     [data-theme="dark"] .theme-toggle { background:#f6fbfd; color:#062436; }
+    [data-theme="dark"] .theme-toggle [data-theme-label] { color:#062436; }
+    [data-theme="dark"] button { color:#062436; }
+    [data-theme="dark"] button.active { color:#fff; background:#020b12; border-color:#66c7db; }
   </style>
 
 
@@ -355,7 +359,7 @@
 <body>
   <header class="wrap checklist-header">
     <nav>
-      <a class="nav-brand" href="./" aria-label="Small Site Studio home"><img class="logo-img" src="assets/small-site-studio-logo.png" alt="Small Site Studio logo"></a>
+      <a class="nav-brand" href="./" aria-label="Small Site Studio home"><img class="logo-img" src="assets/small-site-studio-logo.png" width="900" height="600" alt="Small Site Studio logo"></a>
       <div class="nav-links">
         <a href="./#calculator">ROI calculator</a>
         <a class="button primary" href="./#calculator">Estimate your landing page upside</a>
