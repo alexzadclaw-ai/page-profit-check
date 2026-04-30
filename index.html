@@ -356,10 +356,12 @@
           { '@type':'Question', name:'Does the mini-audit include rebuilding the page?', acceptedAnswer:{ '@type':'Answer', text:'The mini-audit includes recommendations only. Optional implementation or cleanup work can be scoped separately.' } }
         ]
       };
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.textContent = JSON.stringify(structuredData);
-      document.head.appendChild(script);
+      if (!/htmlpreview\.github\.io$/.test(location.hostname)) {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(structuredData);
+        document.head.appendChild(script);
+      }
     })();
   </script>
 </head>
