@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://page-profit-check.pages.dev/sitemap.xml

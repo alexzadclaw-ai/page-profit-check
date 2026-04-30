@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Landing Page ROI Calculator + Conversion Audit</title>
-  <meta name="description" content="Estimate how much revenue a better landing page could unlock, then get a practical conversion audit checklist." />
+  <title>Page Profit Check | Landing Page ROI Calculator by Small Site Studio</title>
+  <meta name="description" content="Estimate how much revenue a better landing page could unlock. A free Small Site Studio calculator with conversion audit checklist and mini-audit option." />
+  <link rel="canonical" href="https://page-profit-check.pages.dev/" />
   <style>
     :root {
       --bg: #0b1020;
@@ -62,19 +63,77 @@
     .cta h2 { margin:0 0 6px; }
     .cta p { margin:0; color:var(--muted); }
     .cta .button { display:inline-block; text-decoration:none; background:var(--accent); color:#07120e; padding:13px 18px; border-radius:999px; font-weight:800; white-space:nowrap; }
+    .subcta { margin: -44px 0 72px; padding: 22px 24px; display:flex; gap:16px; justify-content:space-between; align-items:center; background: rgba(255,255,255,.05); border:1px solid var(--line); border-radius: 24px; }
+    .subcta h2 { margin:0 0 6px; font-size: 22px; }
+    .subcta p { margin:0; color:var(--muted); max-width: 720px; }
+    .subcta .button.secondary { display:inline-block; text-decoration:none; background: transparent; color: var(--text); padding:12px 17px; border-radius:999px; border:1px solid var(--line); font-weight:800; white-space:nowrap; }
+
+    .topnav { display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; margin: 22px 0 12px; padding: 13px 16px; border:1px solid rgba(174,238,211,.22); border-radius:24px; background:linear-gradient(135deg, rgba(235,248,242,.18), rgba(122,167,255,.08)); box-shadow:0 16px 40px rgba(0,0,0,.12); backdrop-filter: blur(12px); }
+    .brand { color:#07120e; text-decoration:none; font-weight:900; letter-spacing:-.03em; display:inline-flex; align-items:center; gap:10px; background:rgba(235,248,242,.82); border:1px solid rgba(235,248,242,.38); border-radius:16px; padding:6px 10px; }
+    .logo-img { width: 198px; height: auto; display:block; }
+    .navlinks { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .navlinks a { text-decoration:none; color:var(--text); border:1px solid var(--line); border-radius:999px; padding:9px 13px; background:rgba(255,255,255,.05); font-weight:700; font-size:14px; }
+    .navlinks a.primary { background:var(--accent); color:#07120e; border-color:transparent; }
+    .resource-grid { display:grid; grid-template-columns: 1fr; gap: 18px; margin: 0 0 72px; }
+    .resource-card { background: rgba(255,255,255,.055); border:1px solid var(--line); border-radius: 24px; padding: 22px; }
+    .resource-card h3 { margin:0 0 8px; font-size: 20px; }
+    .resource-card p { margin:0 0 14px; color: var(--muted); }
+    .resource-card a { font-weight:800; }
+    .about { margin: 0 0 72px; padding: 28px; border:1px solid var(--line); border-radius:28px; background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.035)); }
+    .about h2 { margin:0 0 8px; }
+    .about p { color:var(--muted); max-width:860px; }
+
+    .offer-detail { margin: 0 0 72px; display:grid; grid-template-columns: 1fr 1fr; gap:22px; align-items:start; }
+    .offer-panel { padding:26px; border:1px solid var(--line); border-radius:28px; background:linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.035)); }
+    .offer-panel h2 { margin:0 0 10px; letter-spacing:-.035em; }
+    .offer-panel p { color:var(--muted); }
+    .deliverables { list-style:none; padding:0; margin:18px 0 0; display:grid; gap:10px; }
+    .deliverables li { padding:12px 14px; border:1px solid var(--line); border-radius:16px; background:rgba(2,7,20,.28); }
+    .steps { counter-reset: step; display:grid; gap:12px; margin-top:18px; }
+    .step { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:start; padding:14px; border:1px solid var(--line); border-radius:18px; background:rgba(2,7,20,.28); }
+    .step::before { counter-increment: step; content: counter(step); width:34px; height:34px; border-radius:50%; background:var(--accent); color:#07120e; display:grid; place-items:center; font-weight:900; }
+    .step strong { display:block; margin-bottom:2px; }
+    .step span { color:var(--muted); font-size:14px; }
+    .faq { margin:0 0 72px; }
+    .faq h2 { margin:0 0 16px; letter-spacing:-.035em; }
+    .faq-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .faq article { padding:20px; border:1px solid var(--line); border-radius:22px; background:rgba(255,255,255,.055); }
+    .faq h3 { margin:0 0 8px; }
+    .faq p { color:var(--muted); margin:0; }
     footer { color: var(--muted); font-size: 13px; padding: 0 0 44px; }
-    @media (max-width: 860px) { .grid, .row { grid-template-columns: 1fr; } .cta { display:block; } .cta .button { margin-top:18px; } }
+    @media (max-width: 860px) { .grid, .row, .resource-grid, .offer-detail, .faq-grid { grid-template-columns: 1fr; } .cta, .subcta { display:block; } .cta .button, .subcta .button.secondary { margin-top:18px; } .topnav { align-items:stretch; border-radius:0; padding:12px 16px; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); width:100vw; } .brand { justify-content:center; width:100%; } .navlinks { width:100%; justify-content:center; } }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Who is the landing page mini-audit for?","acceptedAnswer":{"@type":"Answer","text":"Small businesses, coaches, consultants, local-service teams, and simple SaaS or product pages that need more leads or clearer next steps."}},
+      {"@type":"Question","name":"What does the $99 mini-audit include?","acceptedAnswer":{"@type":"Answer","text":"A written review with 5 to 10 prioritized fixes covering message clarity, CTA flow, mobile friction, trust signals, speed, and SEO quick wins."}},
+      {"@type":"Question","name":"How accurate is the ROI calculator?","acceptedAnswer":{"@type":"Answer","text":"The calculator is a planning estimate, not a guarantee. It helps judge whether a page cleanup is plausibly worth testing."}},
+      {"@type":"Question","name":"Does the mini-audit include rebuilding the page?","acceptedAnswer":{"@type":"Answer","text":"The mini-audit includes recommendations only. Optional implementation or cleanup work can be scoped separately."}}
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="wrap">
-    <div class="badge">⚡ Free calculator <span>•</span> landing page ROI + audit</div>
+    <nav class="topnav" aria-label="site navigation">
+      <a class="brand" href="./" aria-label="Small Site Studio home"><img class="logo-img" src="assets/small-site-studio-logo.svg" alt="Small Site Studio"></a>
+      <div class="navlinks">
+        <a href="./#calculator">ROI calculator</a>
+        <a href="./checklist.html">Launch checklist</a>
+        <a class="primary" href="mailto:alexey.zadorozhny@proton.me?subject=Landing%20page%20mini-audit%20request&body=Hi%20Alexey%2C%0A%0AI%27d%20like%20a%20%2499%20landing%20page%20mini-audit.%0A%0APage%20URL%3A%20%0ABusiness%20type%3A%20%0AMain%20goal%3A%20%0AAnything%20specific%20you%20want%20checked%3A%20">Request mini-audit</a>
+      </div>
+    </nav>
+    <div class="badge">⚡ Small Site Studio resource <span>•</span> free landing page ROI + audit calculator</div>
     <h1>How much money is your landing page leaving on the table?</h1>
-    <p class="lede">Estimate the revenue impact of small conversion-rate improvements, then use the checklist to find practical fixes before you spend more on traffic.</p>
+    <p class="lede">Estimate the revenue impact of small conversion-rate improvements, then use the checklist to find practical fixes before you spend more on traffic. Built by Small Site Studio for small businesses, coaches, consultants, and local-service teams.</p>
   </header>
 
   <main class="wrap">
-    <section class="grid" aria-label="calculator and results">
+    <section class="grid" id="calculator" aria-label="calculator and results">
       <div class="card">
         <div class="inner">
           <h2>Your current numbers</h2>
@@ -147,15 +206,62 @@
 
     <section class="cta">
       <div>
-        <h2>Want a $99 landing page mini-audit?</h2>
-        <p>Send your page URL and I’ll review the biggest conversion leaks: clarity, CTA placement, mobile layout, trust signals, speed friction, and quick-win fixes.</p>
+        <h2>Want the 5–10 fixes most likely to matter?</h2>
+        <p>Get a practical $99 landing page mini-audit: message clarity, CTA placement, mobile friction, trust signals, speed issues, and local/service SEO quick wins.</p>
       </div>
-      <a class="button" href="mailto:alexey.zadorozhny@proton.me?subject=Landing%20page%20mini-audit%20request&body=Hi%20Alexey%2C%0A%0AI%27d%20like%20a%20landing%20page%20mini-audit.%0A%0APage%20URL%3A%20%0ABusiness%20type%3A%20%0AMain%20goal%20%28leads%2C%20sales%2C%20bookings%2C%20etc.%29%3A%20%0ACurrent%20monthly%20traffic%20%28rough%20estimate%29%3A%20%0ACurrent%20conversion%20rate%20%28if%20known%29%3A%20%0AAnything%20specific%20you%20want%20checked%3A%20%0A%0AThanks!">Request a mini-audit</a>
+      <a class="button" href="mailto:alexey.zadorozhny@proton.me?subject=Landing%20page%20mini-audit%20request&body=Hi%20Alexey%2C%0A%0AI%27d%20like%20a%20landing%20page%20mini-audit.%0A%0APage%20URL%3A%20%0ABusiness%20type%3A%20%0AMain%20goal%20%28leads%2C%20sales%2C%20bookings%2C%20etc.%29%3A%20%0ACurrent%20monthly%20traffic%20%28rough%20estimate%29%3A%20%0ACurrent%20conversion%20rate%20%28if%20known%29%3A%20%0AAnything%20specific%20you%20want%20checked%3A%20%0A%0AThanks!">Request $99 mini-audit</a>
+    </section>
+
+    <section class="offer-detail" aria-label="mini audit details">
+      <div class="offer-panel">
+        <h2>What you get in the mini-audit</h2>
+        <p>A short, practical review you can implement yourself or hand to a freelancer — no bloated redesign pitch.</p>
+        <ul class="deliverables">
+          <li>5–10 prioritized conversion fixes</li>
+          <li>CTA, headline, and above-the-fold recommendations</li>
+          <li>Mobile layout and friction notes</li>
+          <li>Trust/proof and local/service SEO quick wins</li>
+          <li>Speed/Lighthouse observations where useful</li>
+          <li>Suggested copy changes for your strongest fixes</li>
+        </ul>
+      </div>
+      <div class="offer-panel">
+        <h2>How it works</h2>
+        <div class="steps">
+          <div class="step"><div><strong>Send your page URL</strong><span>Share the page, business type, and main goal: leads, bookings, sales, or consultations.</span></div></div>
+          <div class="step"><div><strong>Receive a focused audit</strong><span>I review clarity, trust, mobile, CTA flow, speed, and local/service SEO opportunities.</span></div></div>
+          <div class="step"><div><strong>Implement the quick wins</strong><span>Use the recommendations yourself, hand them to a freelancer, or ask for help with a cleanup sprint.</span></div></div>
+        </div>
+        <p><a class="button" href="mailto:alexey.zadorozhny@proton.me?subject=Landing%20page%20mini-audit%20request&body=Hi%20Alexey%2C%0A%0AI%27d%20like%20a%20%2499%20landing%20page%20mini-audit.%0A%0APage%20URL%3A%20%0ABusiness%20type%3A%20%0AMain%20goal%3A%20%0AAnything%20specific%20you%20want%20checked%3A%20">Request $99 mini-audit</a></p>
+      </div>
+    </section>
+
+    <section class="resource-grid one" aria-label="Small Site Studio resources">
+      <article class="resource-card">
+        <h3>Not ready for an audit?</h3>
+        <p>Use the free launch checklist first: domains, email, analytics, SEO, local SEO, speed, privacy, security, and launch QA.</p>
+        <a href="./checklist.html">Open free checklist →</a>
+      </article>
+    </section>
+
+    <section class="faq" aria-label="mini audit FAQ">
+      <h2>Mini-audit FAQ</h2>
+      <div class="faq-grid">
+        <article><h3>Who is this for?</h3><p>Small businesses, coaches, consultants, local-service teams, and simple SaaS/product pages that need more leads or clearer next steps.</p></article>
+        <article><h3>What does the $99 include?</h3><p>A written review with 5–10 prioritized fixes covering clarity, CTA flow, mobile friction, trust signals, speed, and SEO quick wins.</p></article>
+        <article><h3>How accurate is the calculator?</h3><p>It is a planning estimate, not a guarantee. Use it to judge whether a page cleanup is plausibly worth testing.</p></article>
+        <article><h3>Do you rebuild the page?</h3><p>The mini-audit is recommendations only. If the fixes are straightforward, an optional cleanup sprint can be scoped separately.</p></article>
+      </div>
+    </section>
+
+    <section class="about" aria-label="about Small Site Studio">
+      <h2>Practical website tools for small businesses</h2>
+      <p>Small Site Studio creates lightweight calculators, checklists, and audits for owners who need their websites to generate trust, leads, and clear next steps — without turning every improvement into a large redesign project.</p>
     </section>
   </main>
 
   <footer class="wrap">
-    <p>Note: This calculator is an estimate for planning. Actual results depend on traffic quality, offer strength, sales process, and measurement accuracy.</p>
+    <p>Small Site Studio • Page Profit Check. Note: This calculator is an estimate for planning. Actual results depend on traffic quality, offer strength, sales process, and measurement accuracy.</p>
   </footer>
 
   <script>

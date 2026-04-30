@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Small Business Website Launch Checklist | Page Profit Check</title>
+  <meta name="description" content="A practical website launch checklist for small businesses covering setup, SEO, analytics, legal basics, and post-launch follow-up." />
+  <link rel="canonical" href="https://page-profit-check.pages.dev/checklist.html" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a31;
+      --panel-2: #18223d;
+      --text: #f6f8ff;
+      --muted: #aab4d0;
+      --accent: #75f0c1;
+      --accent-2: #7aa7ff;
+      --line: rgba(255,255,255,.12);
+      --shadow: 0 24px 70px rgba(0,0,0,.35);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top left, rgba(117,240,193,.18), transparent 32rem), radial-gradient(circle at 85% 15%, rgba(122,167,255,.18), transparent 28rem), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 28px 0 26px; }
+    nav { display:flex; justify-content:space-between; align-items:center; gap:18px; margin-bottom:28px; flex-wrap:wrap; padding:13px 16px; border:1px solid rgba(174,238,211,.22); border-radius:24px; background:linear-gradient(135deg, rgba(235,248,242,.18), rgba(122,167,255,.08)); box-shadow:0 16px 40px rgba(0,0,0,.12); backdrop-filter: blur(12px); }
+    .nav-brand { color:#07120e; text-decoration:none; font-weight:800; letter-spacing:-.02em; display:inline-flex; align-items:center; background:rgba(235,248,242,.82); border:1px solid rgba(235,248,242,.38); border-radius:16px; padding:6px 10px; }
+    .logo-img { width: 198px; height: auto; display:block; }
+    .nav-links { display:flex; gap:12px; flex-wrap:wrap; }
+    .nav-links a, .button {
+      display:inline-flex; align-items:center; justify-content:center; text-decoration:none; padding:11px 16px; border-radius:999px; border:1px solid var(--line);
+      background: rgba(255,255,255,.06); color: var(--text); font-weight:700;
+    }
+    .button.primary { background: var(--accent); color: #07120e; border-color: transparent; }
+    .eyebrow { display:inline-flex; gap:8px; align-items:center; padding:7px 12px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.06); color:var(--muted); font-size:14px; }
+    h1 { font-size: clamp(34px, 6vw, 62px); line-height: .98; letter-spacing: -0.05em; margin: 18px 0 14px; max-width: 900px; }
+    .lede { font-size: clamp(18px, 2.3vw, 22px); color: var(--muted); max-width: 780px; margin: 0; }
+    .disclosure {
+      margin-top: 22px; padding: 16px 18px; border:1px solid rgba(255,255,255,.14); border-radius:18px; background: rgba(255,255,255,.05); color: var(--muted);
+    }
+    main { padding-bottom: 64px; }
+    .toc, .section, .cta, .toolbox {
+      background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.035));
+      border:1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .toc, .cta { padding: 24px; margin-bottom: 24px; }
+    .toc-links {
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px 18px; margin-top: 16px;
+    }
+    .toc-links a { color: var(--text); text-decoration:none; border-bottom:1px dashed rgba(255,255,255,.22); padding-bottom:4px; }
+    .content-grid { display:grid; grid-template-columns: minmax(0, 1.65fr) minmax(280px, .9fr); gap: 22px; align-items:start; }
+    .sections { display:grid; gap: 18px; }
+    .section { padding: 22px; }
+    .section h2 { margin:0 0 12px; font-size: 24px; letter-spacing:-.02em; }
+    .section p { margin: 0 0 14px; color: var(--muted); }
+    .section ul { margin: 0; padding-left: 20px; }
+    .section li { margin: 0 0 12px; }
+    .section li strong { color: var(--text); }
+    .toolbox { padding: 22px; position: sticky; top: 18px; }
+    .toolbox h2 { margin:0 0 10px; font-size: 22px; }
+    .tool-card {
+      padding: 14px 16px; border:1px solid var(--line); border-radius:18px; background: rgba(2,7,20,.34); margin-top: 12px;
+    }
+    .tool-card h3 { margin:0 0 6px; font-size: 16px; }
+    .tool-card p { margin:0 0 8px; color: var(--muted); font-size: 14px; }
+    .tool-card a { font-size: 14px; }
+    .cta {
+      display:flex; justify-content:space-between; align-items:center; gap:18px;
+      background: linear-gradient(135deg, rgba(117,240,193,.16), rgba(122,167,255,.16));
+    }
+    .cta h2 { margin:0 0 8px; }
+    .cta p { margin:0; color:var(--muted); max-width: 700px; }
+    footer { color: var(--muted); font-size: 13px; padding: 0 0 44px; }
+    @media (max-width: 920px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .toolbox { position: static; }
+      .cta { display:block; }
+      .cta .button { margin-top: 18px; }
+    }
+  
+    .final-cta { margin: 32px auto 24px; padding: 28px; border: 1px solid rgba(255,255,255,.14); border-radius: 24px; background: linear-gradient(135deg, rgba(117,240,193,.14), rgba(122,167,255,.14)); max-width: 1120px; }
+    .final-cta h2 { margin-top: 0; }
+    .final-cta p { color: var(--muted); max-width: 720px; }
+
+    @media (max-width: 760px) {
+      nav { align-items:stretch; border-radius:0; padding:12px 16px; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); width:100vw; }
+      .nav-brand { justify-content:center; width:100%; }
+      .nav-links { width:100%; justify-content:center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav>
+      <a class="nav-brand" href="./" aria-label="Small Site Studio home"><img class="logo-img" src="assets/small-site-studio-logo.svg" alt="Small Site Studio"></a>
+      <div class="nav-links">
+        <a href="./#calculator">ROI calculator</a>
+        <a class="button primary" href="./#calculator">Estimate your landing page upside</a>
+        <a class="button" href="mailto:alexey.zadorozhny@proton.me?subject=Landing%20page%20mini-audit%20request&body=Hi%20Alexey%2C%0A%0AI%27d%20like%20a%20%2499%20landing%20page%20mini-audit.%0A%0APage%20URL%3A%20%0ABusiness%20type%3A%20%0AMain%20goal%3A%20%0AAnything%20specific%20you%20want%20checked%3A%20">Request $99 mini-audit</a>
+      </div>
+    </nav>
+    <div class="eyebrow">🧾 Small Site Studio resource <span>•</span> launch smarter, fix less later</div>
+    <h1>Small Business Website Launch Checklist</h1>
+    <p class="lede">Use this before you publish a new site, redesign an old one, or hand a project off to a freelancer. It covers the practical details that drive trust, leads, visibility, and fewer expensive post-launch mistakes. Part of the Small Site Studio resource library.</p>
+    <div class="disclosure"><strong style="color:#f6f8ff;">Affiliate disclosure:</strong> This page may include affiliate links. If you buy through those links, we may earn a commission at no extra cost to you. Recommendations are chosen for usefulness, not payout.</div>
+  </header>
+
+  <main class="wrap">
+    <section class="toc">
+      <h2 style="margin:0; font-size:24px;">What to check before and after launch</h2>
+      <div class="toc-links">
+        <a href="#domain">Domain</a>
+        <a href="#hosting">Hosting or site builder</a>
+        <a href="#email">Business email</a>
+        <a href="#contact">Contact and booking</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#seo">SEO basics</a>
+        <a href="#local-seo">Local SEO</a>
+        <a href="#speed">Speed and mobile</a>
+        <a href="#security">Security and backups</a>
+        <a href="#legal">Legal and privacy</a>
+        <a href="#qa">Launch QA</a>
+        <a href="#follow-up">Post-launch follow-up</a>
+      </div>
+    </section>
+
+    <div class="content-grid">
+      <div class="sections">
+        <section class="section" id="domain">
+          <h2>1. Domain</h2>
+          <p>Your domain should be easy to say, easy to spell, and tied to the business name or service area if that matters for local search.</p>
+          <ul>
+            <li><strong>Use one primary domain:</strong> pick the version you actually want customers to remember and redirect the rest.</li>
+            <li><strong>Renewal control matters:</strong> make sure the business owner has access to the registrar login and billing email.</li>
+            <li><strong>Turn on domain privacy if available:</strong> this reduces spam and keeps personal contact details out of public lookup tools.</li>
+            <li><strong>Document DNS records:</strong> know who controls website, email, and verification records before launch day.</li>
+          </ul>
+        </section>
+
+        <section class="section" id="hosting">
+          <h2>2. Hosting or site builder</h2>
+          <p>The right setup is the one the business can realistically maintain, not the fanciest stack.</p>
+          <ul>
+            <li><strong>Choose for fit:</strong> simple brochure site, lead-gen landing page, local service site, and ecommerce all have different needs.</li>
+            <li><strong>Check uptime and support:</strong> cheap plans become expensive when the site breaks and nobody answers.</li>
+            <li><strong>Make sure SSL is included:</strong> HTTPS should be standard, not a paid surprise.</li>
+            <li><strong>Avoid lock-in surprises:</strong> know how easy it is to export content, change themes, or move later.</li>
+          </ul>
+        </section>
+
+        <section class="section" id="email">
+          <h2>3. Business email</h2>
+          <p>A real domain-based email address signals trust and helps separate business operations from personal inboxes.</p>
+          <ul>
+            <li><strong>Set up role accounts:</strong> common examples are hello@, support@, billing@, or sales@.</li>
+            <li><strong>Configure SPF, DKIM, and DMARC:</strong> basic email authentication improves deliverability and reduces spoofing risk.</li>
+            <li><strong>Test contact forms:</strong> confirm form submissions actually reach the right inbox and do not land in spam.</li>
+            <li><strong>Create a simple email signature:</strong> include phone, website, and any relevant trust signal like licensing or service area.</li>
+          </ul>
+        </section>
+
+        <section class="section" id="contact">
+          <h2>4. Contact and booking</h2>
+          <p>If a visitor is ready to act, the next step should feel obvious and low-friction.</p>
+          <ul>
+            <li><strong>Put the main CTA above the fold:</strong> call, request quote, schedule, or book now should not be hidden.</li>
+            <li><strong>Use short forms:</strong> only ask for what the team will actually use.</li>
+            <li><strong>Confirm response expectations:</strong> say when someone will reply, like “within one business day.”</li>
+            <li><strong>Test booking flows on mobile:</strong> appointment tools often break or get awkward on smaller screens.</li>
+          </ul>
+        </section>
+
+        <section class="section" id="analytics">
+          <h2>5. Analytics</h2>
+          <p>If you do not measure the right actions, you cannot tell whether the site is helping the business.</p>
+          <ul>
+            <li><strong>Install analytics before launch:</strong> do not wait until traffic arrives.</li>
+            <li><strong>Track conversions, not just visits:</strong> form submissions, booked calls, purchases, or clicks to call matter more than pageviews alone.</li>
+            <li><strong>Verify search indexing tools:</strong> connect the site to Google Search Console and Bing Webmaster Tools.</li>
+            <li><strong>Use a simple dashboard:</strong> make reporting clear enough that a non-technical owner can understand it monthly.</li>
+          </ul>
+        </section>
+
+        <section class="section" id="seo">
+          <h2>6. SEO basics</h2>
+          <p>Good basics beat messy “SEO hacks.” Focus on clarity, structure, and intent.</p>
+          <ul>
+            <li><strong>Write unique title tags and meta descriptions:</strong> every key page should describe a real service or offer.</li>
+            <li><strong>Use one clear H1 per page:</strong> the main heading should match the visitor’s intent.</li>
+            <li><strong>Create pages around actual services:</strong> avoid forcing everything onto one generic page.</li>
+            <li><strong>Internal linking matters:</strong> help people and search engines understand what pages are most important.</li>
+          </ul>
+        </section>
+
+        <section class="section" id="local-seo">
+          <h2>7. Local SEO</h2>
+          <p>For service businesses and local shops, local signals are often just as important as the website itself.</p>
+          <ul>
+            <li><strong>Claim and update your Google Business Profile:</strong> keep hours, categories, service area, and contact details accurate.</li>
+            <li><strong>Keep NAP consistent:</strong> name, address, and phone should match across the website and listings.</li>
+            <li><strong>Add local proof:</strong> reviews, project photos, neighborhoods served, and local testimonials help conversion and local relevance.</li>
+            <li><strong>Embed a map only if useful:</strong> for some service-area businesses, a service map or city list may help more than a storefront map.</li>
+          </ul>
+        </section>
+
+        <section class="section" id="speed">
+          <h2>8. Speed and mobile</h2>
+          <p>Most small business traffic is mobile enough that slow pages quietly burn leads.</p>
+          <ul>
+            <li><strong>Compress images:</strong> especially hero banners and gallery images.</li>
+            <li><strong>Limit unnecessary scripts:</strong> chat widgets, popups, and extra trackers can degrade load time fast.</li>
+            <li><strong>Check real phones, not only desktop previews:</strong> buttons, forms, maps, and tap targets should feel easy to use.</li>
+            <li><strong>Keep important content high on the page:</strong> make the first screen do real work.</li>
+          </ul>
+        </section>
+
+        <section class="section" id="security">
+          <h2>9. Security and backups</h2>
+          <p>Security basics are boring right up until they are suddenly not.</p>
+          <ul>
+            <li><strong>Use strong unique passwords and MFA:</strong> especially for registrar, hosting, CMS, and email accounts.</li>
+            <li><strong>Set automated backups:</strong> confirm both how often they run and how to restore them.</li>
+            <li><strong>Update plugins, themes, and dependencies:</strong> outdated components are a common failure point.</li>
+            <li><strong>Limit admin access:</strong> remove old contractors and avoid shared logins where possible.</li>
+          </ul>
+        </section>
+
+        <section class="section" id="legal">
+          <h2>10. Legal and privacy</h2>
+          <p>Most small businesses do not need a legal thesis, but they do need the basics done properly.</p>
+          <ul>
+            <li><strong>Add a privacy policy:</strong> especially if the site collects forms, payments, analytics, or email subscribers.</li>
+            <li><strong>Check consent requirements:</strong> cookie banners and tracking disclosures may be relevant depending on audience and tools used.</li>
+            <li><strong>Make business details clear:</strong> include company name, contact methods, and any required license or regulatory information.</li>
+            <li><strong>Review accessibility basics:</strong> readable contrast, alt text, keyboard usability, and descriptive links are worth checking.</li>
+          </ul>
+        </section>
+
+        <section class="section" id="qa">
+          <h2>11. Launch QA</h2>
+          <p>Launch problems are usually small, embarrassing, and very preventable.</p>
+          <ul>
+            <li><strong>Proofread key pages:</strong> homepage, service pages, pricing, contact details, and email templates.</li>
+            <li><strong>Test all links and buttons:</strong> including footer links, policy pages, and social icons.</li>
+            <li><strong>Check forms, calls, and notifications:</strong> make sure leads actually trigger the right workflows.</li>
+            <li><strong>Confirm indexing settings:</strong> remove noindex or password protection left over from staging.</li>
+          </ul>
+        </section>
+
+        <section class="section" id="follow-up">
+          <h2>12. Post-launch follow-up</h2>
+          <p>The first 30 days should be used to learn, not to assume the project is finished.</p>
+          <ul>
+            <li><strong>Review traffic quality:</strong> see where visitors come from and what pages they actually use.</li>
+            <li><strong>Track conversion friction:</strong> heatmaps, recordings, or simple user feedback can reveal confusing sections quickly.</li>
+            <li><strong>Update weak pages first:</strong> improve the pages that already get visits instead of chasing endless new content.</li>
+            <li><strong>Set a monthly maintenance habit:</strong> content updates, plugin updates, backups, and reporting should not depend on memory.</li>
+          </ul>
+        </section>
+
+        <section class="cta">
+          <div>
+            <h2>Want to estimate the upside before you rebuild?</h2>
+            <p>Run the Page Profit Check calculator to estimate how much a stronger landing page or cleaner conversion flow could be worth before you spend money on redesign work.</p>
+          </div>
+          <a class="button primary" href="./#calculator">Try Page Profit Check</a>
+        </section>
+      </div>
+
+      <aside class="toolbox" aria-label="recommended tool categories">
+        <h2>Recommended tool categories</h2>
+        <p style="margin:0; color:var(--muted);">These are placeholders for future affiliate partnerships. For now they point to neutral examples or official directories.</p>
+
+        <div class="tool-card">
+          <h3>Domains and hosting</h3>
+          <p>Look for reliable support, SSL, backups, and easy DNS control.</p>
+          <a href="https://www.cloudflare.com/learning/dns/what-is-dns/">Neutral reference: DNS basics</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>Email marketing</h3>
+          <p>Useful if the business wants newsletter capture, lead nurturing, or follow-up automation.</p>
+          <a href="https://mailchimp.com/resources/email-marketing-field-guide/">Neutral reference: email marketing guide</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>CRM and forms</h3>
+          <p>Choose tools that route leads clearly and are simple enough for the team to keep using.</p>
+          <a href="https://www.hubspot.com/products/crm">Neutral example: CRM overview</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>Booking</h3>
+          <p>Best for consultants, service pros, and anyone scheduling calls or appointments online.</p>
+          <a href="https://calendly.com/">Neutral example: booking software</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>Analytics</h3>
+          <p>At minimum, track visits, traffic sources, and the main conversions that matter to the business.</p>
+          <a href="https://analytics.google.com/">Official tool: Google Analytics</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>Privacy and legal docs</h3>
+          <p>Useful for policy generation, consent management, and staying organized as the site grows.</p>
+          <a href="https://termly.io/resources/articles/website-legal-requirements/">Neutral reference: website legal basics</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>Design assets</h3>
+          <p>Good visuals help trust, but they should still load fast and fit the brand.</p>
+          <a href="https://www.canva.com/">Neutral example: design assets and templates</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <section class="wrap final-cta" aria-label="mini audit CTA">
+    <h2>Need a second pair of eyes before launch?</h2>
+    <p>Use the checklist yourself, or request a $99 mini-audit with specific conversion, SEO, speed, and trust fixes for your page.</p>
+    <a class="button primary" href="mailto:alexey.zadorozhny@proton.me?subject=Landing%20page%20mini-audit%20request&body=Hi%20Alexey%2C%0A%0AI%27d%20like%20a%20%2499%20landing%20page%20mini-audit.%0A%0APage%20URL%3A%20%0ABusiness%20type%3A%20%0AMain%20goal%3A%20%0AAnything%20specific%20you%20want%20checked%3A%20">Request a mini-audit</a>
+  </section>
+
+  <footer class="wrap">
+    <p>This checklist is educational and operational, not legal advice. If your site handles payments, regulated data, or industry-specific compliance, get a qualified professional review.</p>
+  </footer>
+</body>
+</html>
