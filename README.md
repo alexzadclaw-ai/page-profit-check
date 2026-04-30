@@ -26,5 +26,5 @@ npx wrangler pages deploy . --project-name page-profit-check
 Expected free Cloudflare Pages URL pattern:
 
 ```text
-https://page-profit-check.pages.dev/
+https://smallsitestudio.com/
 ```
