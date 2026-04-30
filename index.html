@@ -156,17 +156,6 @@
     .mini-stat div { padding:0; border:0; background:transparent; }
     .mini-stat strong { display:block; font-size:42px; line-height:1; letter-spacing:-.06em; color:#fff; }
     .mini-stat span { display:block; color:#b8d7df; font-size:13px; font-weight:850; }
-    .main-stripe {
-      margin: 8px calc(50% - 50vw) 70px;
-      background:var(--navy);
-      color:#fff;
-      overflow:hidden;
-      white-space:nowrap;
-      transform:rotate(-1.5deg);
-      padding:16px 0;
-      box-shadow:0 20px 60px rgba(6,36,54,.20);
-    }
-    .main-stripe span { display:inline-block; font-size:clamp(20px,3vw,30px); font-weight:950; letter-spacing:-.04em; margin-right:34px; }
     .grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start; padding:0 0 70px; }
     .card, .toc, .section, .toolbox, .resource-card, .offer-panel, .about, .faq article, .cta, .final-cta, .disclosure {
       background:rgba(255,255,255,.94);
@@ -279,7 +268,6 @@
       .logo-img { width:210px; height:auto; }
       .hero-card { border-radius:30px; padding:18px; }
       .hero-card .mini-stat { grid-template-columns:1fr; }
-      .main-stripe { margin-top:34px; }
       h1 { font-size:clamp(48px,16vw,72px); }
     }
 
@@ -314,7 +302,7 @@
     [data-theme="dark"] .card:nth-child(2), [data-theme="dark"] .resource-card, [data-theme="dark"] .toc, [data-theme="dark"] .offer-panel:nth-child(2), [data-theme="dark"] .faq article:nth-child(4n+3), [data-theme="dark"] .faq article:nth-child(4n+4), [data-theme="dark"] .section:nth-child(even) { background:#12384a; }
     [data-theme="dark"] input, [data-theme="dark"] select, [data-theme="dark"] .metric, [data-theme="dark"] .deliverables li, [data-theme="dark"] .step { background:#081923; color:var(--ink); border-color:rgba(157,219,231,.18); }
     [data-theme="dark"] .box { background:#12384a; border-color:var(--sky); }
-    [data-theme="dark"] .main-stripe, [data-theme="dark"] .cta, [data-theme="dark"] .final-cta, [data-theme="dark"] .hero-card .mini-stat, [data-theme="dark"] .toolbox { background:#020b12; }
+    [data-theme="dark"] .cta, [data-theme="dark"] .final-cta, [data-theme="dark"] .hero-card .mini-stat, [data-theme="dark"] .toolbox { background:#020b12; }
     [data-theme="dark"] .cta h2, [data-theme="dark"] .cta p, [data-theme="dark"] .final-cta h2, [data-theme="dark"] .final-cta p, [data-theme="dark"] .toolbox h2, [data-theme="dark"] .toolbox p { color:#f4fbfd; }
     [data-theme="dark"] .tool-card { background:rgba(255,255,255,.06); border-color:rgba(157,219,231,.18); }
     [data-theme="dark"] footer { color:#a9c0c9; }
@@ -395,7 +383,6 @@
     </div>
   </header>
 
-  <div class="main-stripe" aria-hidden="true"><span>CALCULATE → CHECK → FIX → PROFIT →</span><span>CALCULATE → CHECK → FIX → PROFIT →</span><span>CALCULATE → CHECK → FIX → PROFIT →</span></div>
 
   <main class="wrap">
     <section class="grid" id="calculator" aria-label="calculator and results">
