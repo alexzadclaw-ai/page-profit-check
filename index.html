@@ -8,6 +8,14 @@
   <link rel="canonical" href="https://page-profit-check.pages.dev/" />
 
 
+  <script>
+    (() => {
+      const saved = localStorage.getItem('ppc-theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
+    })();
+  </script>
+
   <style>
     :root {
       --navy: #062436;
@@ -273,6 +281,73 @@
       .main-stripe { margin-top:34px; }
       h1 { font-size:clamp(48px,16vw,72px); }
     }
+
+    [data-theme="dark"] {
+      --navy: #f4fbfd;
+      --ink: #f4fbfd;
+      --teal: #9ddbe7;
+      --steel: #7fb5c5;
+      --sky: #66c7db;
+      --sky-soft: #12384a;
+      --cream: #06131d;
+      --paper: #081923;
+      --white: #102838;
+      --muted: #a9c0c9;
+      --line: rgba(157,219,231,.18);
+      --shadow: 0 26px 80px rgba(0,0,0,.38);
+      --hard-shadow: 10px 10px 0 rgba(102,199,219,.13);
+    }
+    [data-theme="dark"] body {
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 88% 8%, rgba(102,199,219,.18), transparent 28rem),
+        radial-gradient(circle at 5% 18%, rgba(37,82,103,.25), transparent 21rem),
+        var(--cream);
+    }
+    [data-theme="dark"] body::before { background-image: linear-gradient(90deg, rgba(157,219,231,.06) 1px, transparent 1px), linear-gradient(rgba(157,219,231,.06) 1px, transparent 1px); }
+    [data-theme="dark"] header.wrap::before { background: linear-gradient(135deg, #03101a, #12384a 60%, #66c7db); box-shadow: 0 40px 100px rgba(0,0,0,.52); }
+    [data-theme="dark"] header.wrap::after { background: var(--cream); }
+    [data-theme="dark"] .navlinks a, [data-theme="dark"] .nav-links a, [data-theme="dark"] .button, [data-theme="dark"] .cta .button, [data-theme="dark"] .subcta .button.secondary { background:#f6fbfd; color:#062436; border-color:rgba(157,219,231,.18); }
+    [data-theme="dark"] .navlinks a.primary, [data-theme="dark"] .nav-links .button.primary, [data-theme="dark"] .button.primary, [data-theme="dark"] .cta .button { background:#f6fbfd; color:#062436; border-color:#f6fbfd; }
+    [data-theme="dark"] .hero-card, [data-theme="dark"] .card, [data-theme="dark"] .toc, [data-theme="dark"] .section, [data-theme="dark"] .toolbox, [data-theme="dark"] .resource-card, [data-theme="dark"] .offer-panel, [data-theme="dark"] .about, [data-theme="dark"] .faq article, [data-theme="dark"] .disclosure { background:rgba(12,31,43,.94); border-color:rgba(157,219,231,.15); }
+    [data-theme="dark"] .card:nth-child(2), [data-theme="dark"] .resource-card, [data-theme="dark"] .toc, [data-theme="dark"] .offer-panel:nth-child(2), [data-theme="dark"] .faq article:nth-child(4n+3), [data-theme="dark"] .faq article:nth-child(4n+4), [data-theme="dark"] .section:nth-child(even) { background:#12384a; }
+    [data-theme="dark"] input, [data-theme="dark"] select, [data-theme="dark"] .metric, [data-theme="dark"] .deliverables li, [data-theme="dark"] .step { background:#081923; color:var(--ink); border-color:rgba(157,219,231,.18); }
+    [data-theme="dark"] .box { background:#12384a; border-color:var(--sky); }
+    [data-theme="dark"] .main-stripe, [data-theme="dark"] .cta, [data-theme="dark"] .final-cta, [data-theme="dark"] .hero-card .mini-stat, [data-theme="dark"] .toolbox { background:#020b12; }
+    [data-theme="dark"] .cta h2, [data-theme="dark"] .cta p, [data-theme="dark"] .final-cta h2, [data-theme="dark"] .final-cta p, [data-theme="dark"] .toolbox h2, [data-theme="dark"] .toolbox p { color:#f4fbfd; }
+    [data-theme="dark"] .tool-card { background:rgba(255,255,255,.06); border-color:rgba(157,219,231,.18); }
+    [data-theme="dark"] footer { color:#a9c0c9; }
+    .theme-switcher {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin:18px 0 44px;
+      padding:18px 20px;
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:rgba(255,255,255,.55);
+      box-shadow:0 16px 40px rgba(6,36,54,.10);
+    }
+    .theme-switcher span { display:block; color:var(--muted); font-size:13px; font-weight:850; }
+    .theme-switcher strong { color:var(--navy); }
+    .theme-toggle {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      min-height:46px;
+      border:0;
+      border-radius:999px;
+      padding:11px 16px;
+      background:var(--navy);
+      color:var(--cream);
+      font-weight:950;
+      box-shadow:0 14px 34px rgba(6,36,54,.22);
+    }
+    .theme-toggle .knob { width:22px; height:22px; border-radius:50%; background:var(--sky); box-shadow:inset 0 0 0 5px rgba(255,255,255,.35); }
+    [data-theme="dark"] .theme-switcher { background:rgba(12,31,43,.88); border-color:rgba(157,219,231,.16); }
+    [data-theme="dark"] .theme-toggle { background:#f6fbfd; color:#062436; }
   </style>
 
 
@@ -448,6 +523,10 @@
 
   <footer class="wrap">
     <p>Small Site Studio • Page Profit Check. Note: This calculator is an estimate for planning. Actual results depend on traffic quality, offer strength, sales process, and measurement accuracy.</p>
+    <div class="theme-switcher" aria-label="theme settings">
+      <div><strong>Theme</strong><span>Switch the site between light and dark mode.</span></div>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false"><span class="knob" aria-hidden="true"></span><span data-theme-label>Dark mode</span></button>
+    </div>
   </footer>
 
   <script>
@@ -504,8 +583,28 @@
       document.querySelectorAll('.tabs button').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
     }
 
+
+    function initThemeToggle() {
+      const root = document.documentElement;
+      const button = document.querySelector('[data-theme-toggle]');
+      const label = document.querySelector('[data-theme-label]');
+      if (!button || !label) return;
+      const sync = () => {
+        const dark = root.dataset.theme === 'dark';
+        button.setAttribute('aria-pressed', String(dark));
+        label.textContent = dark ? 'Light mode' : 'Dark mode';
+      };
+      button.addEventListener('click', () => {
+        root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('ppc-theme', root.dataset.theme);
+        sync();
+      });
+      sync();
+    }
+
     document.querySelectorAll('input, select').forEach(el => el.addEventListener('input', calc));
     document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => renderAudit(b.dataset.tab)));
+    initThemeToggle();
     calc(); renderAudit();
   </script>
 </body>
