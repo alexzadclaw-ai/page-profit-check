@@ -344,17 +344,23 @@
 
 
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"Who is the landing page mini-audit for?","acceptedAnswer":{"@type":"Answer","text":"Small businesses, coaches, consultants, local-service teams, and simple SaaS or product pages that need more leads or clearer next steps."}},
-      {"@type":"Question","name":"What does the $99 mini-audit include?","acceptedAnswer":{"@type":"Answer","text":"A written review with 5 to 10 prioritized fixes covering message clarity, CTA flow, mobile friction, trust signals, speed, and SEO quick wins."}},
-      {"@type":"Question","name":"How accurate is the ROI calculator?","acceptedAnswer":{"@type":"Answer","text":"The calculator is a planning estimate, not a guarantee. It helps judge whether a page cleanup is plausibly worth testing."}},
-      {"@type":"Question","name":"Does the mini-audit include rebuilding the page?","acceptedAnswer":{"@type":"Answer","text":"The mini-audit includes recommendations only. Optional implementation or cleanup work can be scoped separately."}}
-    ]
-  }
+  <script>
+    (() => {
+      const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type':'Question', name:'Who is the landing page mini-audit for?', acceptedAnswer:{ '@type':'Answer', text:'Small businesses, coaches, consultants, local-service teams, and simple SaaS or product pages that need more leads or clearer next steps.' } },
+          { '@type':'Question', name:'What does the $99 mini-audit include?', acceptedAnswer:{ '@type':'Answer', text:'A written review with 5 to 10 prioritized fixes covering message clarity, CTA flow, mobile friction, trust signals, speed, and SEO quick wins.' } },
+          { '@type':'Question', name:'How accurate is the ROI calculator?', acceptedAnswer:{ '@type':'Answer', text:'The calculator is a planning estimate, not a guarantee. It helps judge whether a page cleanup is plausibly worth testing.' } },
+          { '@type':'Question', name:'Does the mini-audit include rebuilding the page?', acceptedAnswer:{ '@type':'Answer', text:'The mini-audit includes recommendations only. Optional implementation or cleanup work can be scoped separately.' } }
+        ]
+      };
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(structuredData);
+      document.head.appendChild(script);
+    })();
   </script>
 </head>
 <body>
