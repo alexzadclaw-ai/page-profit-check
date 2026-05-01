@@ -365,7 +365,7 @@
     .tool-card h3 { margin:0 0 6px; font-size:17px; color:#fff; }
     .tool-card p { margin:0 0 8px; color:rgba(255,255,255,.72); font-size:14px; }
     .tool-card a { color:#fff; font-weight:850; }
-    .disclosure { margin-top:22px; padding:17px 19px; background:rgba(255,255,255,.82); }
+    .disclosure { margin-top:22px; padding:17px 19px; background:rgba(255,255,255,.94); color:var(--ink); }
     .disclosure strong { color:var(--ink) !important; }
     .checklist-header { display:block; padding:84px 0 48px !important; min-height:auto !important; }
     .checklist-header .topnav, .checklist-header nav { margin-bottom:72px; }
@@ -398,5 +398,5 @@
     }
 
 .toc-title { margin:0; font-size:24px; }
-.disclosure .disclosure-label { color:#f6f8ff !important; }
+.disclosure .disclosure-label { color:var(--ink) !important; }
 .toolbox-intro { margin:0; color:var(--muted); }
