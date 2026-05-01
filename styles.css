@@ -120,7 +120,8 @@
       text-transform:uppercase;
     }
     .badge::before, .eyebrow::before { content:""; width:32px; height:2px; background:linear-gradient(90deg, var(--navy), var(--silver)); border-radius:999px; }
-    h1 { margin:0; max-width:11ch; font-size:clamp(4rem, 8.2vw, 7.8rem); line-height:.94; letter-spacing:-.025em; font-weight:950; color:var(--ink); }
+    h1 { margin:0; max-width:11ch; font-size:clamp(4rem, 8.2vw, 7.8rem); line-height:.94; letter-spacing:-.025em; font-weight:800; color:var(--ink); text-wrap:balance; }
+    h1 .headline-line { display:inline-block; white-space:nowrap; }
     h1 .gradient-word, .gradient-word { color:transparent; background:linear-gradient(130deg, var(--navy) 5%, #176bd3 44%, #9aa3b2 86%); -webkit-background-clip:text; background-clip:text; }
     .lede { max-width:640px; margin:26px 0 0; color:rgba(8,38,74,.72); font-size:clamp(1.14rem, 1.8vw, 1.36rem); line-height:1.62; }
     .hero-actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:34px; align-items:center; }
@@ -369,7 +370,7 @@
     .disclosure strong { color:var(--ink) !important; }
     .checklist-header { display:block; padding:84px 0 48px !important; min-height:auto !important; }
     .checklist-header .topnav, .checklist-header nav { margin-bottom:72px; }
-    .checklist-header h1 { max-width:840px; }
+    .checklist-header h1 { max-width:920px; }
     .checklist-header .lede { max-width:760px; }
     @media (max-width:920px) {
       .topnav, nav { position:relative; top:auto; display:block; border-radius:28px; }
@@ -389,7 +390,8 @@
       .wrap { width:min(100% - 28px,1180px); }
       .navlinks a, .nav-links a, .button { width:100%; }
       .brand::after, .nav-brand::after { font-size:1rem; }
-      h1 { font-size:clamp(3.35rem,17vw,5.4rem); }
+      h1 { max-width:100%; font-size:clamp(3rem,13.3vw,5.4rem); line-height:.98; }
+      .checklist-header h1 { font-size:clamp(2.15rem,10.5vw,5.4rem); }
       .hero-card { min-height:430px; }
       .audit-flow { grid-template-columns:1fr; }
       .audit-lift { display:none; }
