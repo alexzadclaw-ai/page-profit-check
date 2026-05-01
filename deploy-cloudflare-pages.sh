@@ -14,5 +14,7 @@ cp index.html .deploy/index.html
 cp checklist.html .deploy/checklist.html
 cp robots.txt .deploy/robots.txt
 cp sitemap.xml .deploy/sitemap.xml
+cp _headers .deploy/_headers
+cp favicon.ico .deploy/favicon.ico
 cp -R assets .deploy/assets
 npx wrangler pages deploy .deploy --project-name page-profit-check --branch main --commit-dirty=true
