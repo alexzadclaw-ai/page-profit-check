@@ -310,7 +310,7 @@
     .check h3 { margin:0 0 4px; font-size:17px; color:var(--ink); }
     .check p { margin:0; color:var(--muted); font-size:14px; }
     .cta, .final-cta {
-      margin:0 0 78px;
+      margin:34px 0 40px;
       padding:clamp(30px,5vw,48px);
       display:grid;
       grid-template-columns:1fr auto;
@@ -329,6 +329,7 @@
     .cta h2, .cta p, .final-cta h2, .final-cta p { color:#fff; }
     .cta .button, .final-cta .button { background:#fff; color:var(--ink); border-color:#fff; white-space:nowrap; box-shadow:none; }
     .offer-detail { margin:0 0 78px; display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:start; }
+    .cta + .offer-detail { margin-top:0; }
     .offer-panel { padding:30px; }
     .deliverables { list-style:none; padding:0; margin:18px 0 0; display:grid; gap:11px; }
     .deliverables li { padding:13px 15px; border:1px solid rgba(184,191,203,.45); border-radius:20px; background:#fff; font-weight:800; }
@@ -354,6 +355,7 @@
     .toc-links a { color:var(--ink); text-decoration:none; border-bottom:2px dashed rgba(8,38,74,.22); padding-bottom:4px; font-weight:900; }
     .content-grid { display:grid; grid-template-columns:minmax(0,1.6fr) minmax(290px,.9fr); gap:24px; align-items:start; }
     .sections { display:grid; gap:20px; }
+    .sections .cta { margin:14px 0 6px; }
     .section { padding:28px; background:#fff; }
     .section:nth-child(even) { background:#f8fbff; }
     .section h2 { font-size:32px; }
