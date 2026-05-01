@@ -12,6 +12,7 @@ rm -rf .deploy
 mkdir -p .deploy
 cp index.html .deploy/index.html
 cp checklist.html .deploy/checklist.html
+cp styles.css .deploy/styles.css
 cp robots.txt .deploy/robots.txt
 cp sitemap.xml .deploy/sitemap.xml
 cp _headers .deploy/_headers
