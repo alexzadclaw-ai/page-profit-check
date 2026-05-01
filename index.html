@@ -26,7 +26,7 @@
   <link rel="canonical" href="https://smallsitestudio.com/" />
 
 
-  <link rel="stylesheet" href="styles.css?v=20260501-cta-spacing" />
+  <link rel="stylesheet" href="styles.css?v=20260501-color-themes" />
 
 
 
@@ -79,6 +79,16 @@
           <span>Local-business focused</span>
           <span>Clear CTAs</span>
         </div>
+        <fieldset class="theme-picker" aria-label="Preview color theme">
+          <input type="radio" name="theme" id="theme-classic" value="classic" checked>
+          <label for="theme-classic">Classic</label>
+          <input type="radio" name="theme" id="theme-sunset" value="sunset">
+          <label for="theme-sunset">Sunset</label>
+          <input type="radio" name="theme" id="theme-lagoon" value="lagoon">
+          <label for="theme-lagoon">Lagoon</label>
+          <input type="radio" name="theme" id="theme-orchid" value="orchid">
+          <label for="theme-orchid">Orchid</label>
+        </fieldset>
       </div>
       <aside class="hero-card" aria-label="Landing page audit preview">
         <div class="audit-visual" aria-hidden="true">
@@ -303,7 +313,9 @@
     }
 
 
-    document.querySelectorAll('input, select').forEach(el => el.addEventListener('input', calc));
+    document.querySelectorAll('input, select').forEach(el => {
+      if (el.name !== 'theme') el.addEventListener('input', calc);
+    });
     document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => renderAudit(b.dataset.tab)));
     calc(); renderAudit();
   </script>
